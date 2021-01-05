@@ -1,0 +1,544 @@
+
+(base) C:\WINDOWS\system32>activate Deployment_dogcat_new_
+
+(Deployment_dogcat_new_) C:\WINDOWS\system32>cd C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf
+cf version 6.50.0+4f0c3a2ce.2020-03-03, Cloud Foundry command line tool
+Usage: cf [global options] command [arguments...] [command options]
+
+Before getting started:
+  config    login,l      target,t
+  help,h    logout,lo
+
+Application lifecycle:
+  apps,a        run-task,rt    events
+  push,p        logs           set-env,se
+  start,st      ssh            create-app-manifest
+  stop,sp       app            delete,d
+  restart,rs    env,e
+  restage,rg    scale
+
+Services integration:
+  marketplace,m        create-user-provided-service,cups
+  services,s           update-user-provided-service,uups
+  create-service,cs    create-service-key,csk
+  update-service       delete-service-key,dsk
+  delete-service,ds    service-keys,sk
+  service              service-key
+  bind-service,bs      bind-route-service,brs
+  unbind-service,us    unbind-route-service,urs
+
+Route and domain management:
+  routes,r        delete-route    create-domain
+  domains         map-route
+  create-route    unmap-route
+
+Space management:
+  spaces         create-space    set-space-role
+  space-users    delete-space    unset-space-role
+
+Org management:
+  orgs,o       set-org-role
+  org-users    unset-org-role
+
+CLI plugin management:
+  plugins           add-plugin-repo      repo-plugins
+  install-plugin    list-plugin-repos
+
+Commands offered by installed plugins:
+  dev
+
+Global options:
+  --help, -h                         Show help
+  -v                                 Print API request diagnostics to stdout
+
+TIP: Use 'cf help -a' to see all commands.
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf login
+API endpoint: https://api.run.pivotal.io
+
+Email: patilgauravdharmraj@gmail.com
+
+Password:
+Authenticating...
+OK
+
+Targeted org My_First_CNN_Deployment_PCP
+
+Targeted space development
+
+
+
+API endpoint:   https://api.run.pivotal.io (API version: 3.81.0)
+User:           patilgauravdharmraj@gmail.com
+Org:            My_First_CNN_Deployment_PCP
+Space:          development
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf push
+Pushing from manifest to org My_First_CNN_Deployment_PCP / space development as patilgauravdharmraj@gmail.com...
+Using manifest file C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_\manifest.yml
+Getting app info...
+Updating app with these attributes...
+  name:                catdogclassifier
+  path:                C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_
+  command:             python clientApp.py   --master --processes 4 --threads 2
+  disk quota:          1.5G
+  health check type:   port
+  instances:           1
+  memory:              1.5G
+  stack:               cflinuxfs3
+  routes:
+    catdogclassifier-agile-roan-fs.cfapps.io
+
+Updating app catdogclassifier...
+Mapping routes...
+Comparing local files to remote cache...
+Packaging files to upload...
+Uploading files...
+ 1.23 MiB / 1.23 MiB [=====================================================================================] 100.00% 3s
+
+Waiting for API to complete processing files...
+
+Stopping app...
+
+Staging app and tracing logs...
+   Downloaded build artifacts cache (160.1M)
+   ERROR: No buildpack groups passed detection.
+   ERROR: Please check that you are running against the correct path.
+   ERROR: failed to detect: no buildpacks participating
+   -----> Python Buildpack version 1.7.12
+   -----> Supplying Python
+   -----> Installing python 3.6.10
+          Copy [/tmp/buildpacks/14a02f234499563019edf69bb789b437/dependencies/0c19021d97cb1d7b05a10c3715e4867a/python-3.6.10-linux-x64-cflinuxfs3-3bb086eb.tgz]
+   -----> Installing pip-pop 0.1.4
+          Copy [/tmp/buildpacks/14a02f234499563019edf69bb789b437/dependencies/1cd0187e0e714e99bef932d4c22f6515/pip-pop-0.1.4-0a3b0f1b.tar.gz]
+   -----> Running Pip Install
+          Collecting absl-py==0.9.0 (from -r /tmp/app/requirements.txt (line 1))
+            Using cached https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz
+          Collecting astor==0.8.1 (from -r /tmp/app/requirements.txt (line 2))
+            Using cached https://files.pythonhosted.org/packages/c3/88/97eef84f48fa04fbd6750e62dcceafba6c63c81b7ac1420856c8dcc0a3f9/astor-0.8.1-py2.py3-none-any.whl
+          Collecting certifi==2019.11.28 (from -r /tmp/app/requirements.txt (line 3))
+            Using cached https://files.pythonhosted.org/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl
+          Collecting click==7.1.1 (from -r /tmp/app/requirements.txt (line 4))
+            Using cached https://files.pythonhosted.org/packages/dd/c0/4d8f43a9b16e289f36478422031b8a63b54b6ac3b1ba605d602f10dd54d6/click-7.1.1-py2.py3-none-any.whl
+          Collecting Flask==1.1.1 (from -r /tmp/app/requirements.txt (line 5))
+            Using cached https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl
+          Collecting Flask-Cors==3.0.8 (from -r /tmp/app/requirements.txt (line 6))
+            Using cached https://files.pythonhosted.org/packages/78/38/e68b11daa5d613e3a91e4bf3da76c94ac9ee0d9cd515af9c1ab80d36f709/Flask_Cors-3.0.8-py2.py3-none-any.whl
+          Collecting gast==0.3.3 (from -r /tmp/app/requirements.txt (line 7))
+            Using cached https://files.pythonhosted.org/packages/d6/84/759f5dd23fec8ba71952d97bcc7e2c9d7d63bdc582421f3cd4be845f0c98/gast-0.3.3-py2.py3-none-any.whl
+          Collecting google-pasta==0.2.0 (from -r /tmp/app/requirements.txt (line 8))
+            Using cached https://files.pythonhosted.org/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl
+          Collecting grpcio==1.27.2 (from -r /tmp/app/requirements.txt (line 9))
+            Using cached https://files.pythonhosted.org/packages/f1/97/bece4417f349f8f83252232ef66ea63eb47f8044ca61b51e2a478e2c7a94/grpcio-1.27.2-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting h5py==2.10.0 (from -r /tmp/app/requirements.txt (line 10))
+            Using cached https://files.pythonhosted.org/packages/60/06/cafdd44889200e5438b897388f3075b52a8ef01f28a17366d91de0fa2d05/h5py-2.10.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting itsdangerous==1.1.0 (from -r /tmp/app/requirements.txt (line 11))
+            Using cached https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+          Collecting Jinja2==2.11.1 (from -r /tmp/app/requirements.txt (line 12))
+            Using cached https://files.pythonhosted.org/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl
+          Collecting Keras==2.3.1 (from -r /tmp/app/requirements.txt (line 13))
+            Using cached https://files.pythonhosted.org/packages/ad/fd/6bfe87920d7f4fd475acd28500a42482b6b84479832bdc0fe9e589a60ceb/Keras-2.3.1-py2.py3-none-any.whl
+          Collecting Keras-Applications==1.0.8 (from -r /tmp/app/requirements.txt (line 14))
+            Using cached https://files.pythonhosted.org/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl
+          Collecting Keras-Preprocessing==1.1.0 (from -r /tmp/app/requirements.txt (line 15))
+            Using cached https://files.pythonhosted.org/packages/28/6a/8c1f62c37212d9fc441a7e26736df51ce6f0e38455816445471f10da4f0a/Keras_Preprocessing-1.1.0-py2.py3-none-any.whl
+          Collecting Markdown==3.2.1 (from -r /tmp/app/requirements.txt (line 16))
+            Using cached https://files.pythonhosted.org/packages/ab/c4/ba46d44855e6eb1770a12edace5a165a0c6de13349f592b9036257f3c3d3/Markdown-3.2.1-py2.py3-none-any.whl
+          Collecting MarkupSafe==1.1.1 (from -r /tmp/app/requirements.txt (line 17))
+            Using cached https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting numpy==1.18.2 (from -r /tmp/app/requirements.txt (line 18))
+            Using cached https://files.pythonhosted.org/packages/07/08/a549ba8b061005bb629b76adc000f3caaaf881028b963c2e18f811c6edc1/numpy-1.18.2-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting Pillow==7.0.0 (from -r /tmp/app/requirements.txt (line 19))
+            Using cached https://files.pythonhosted.org/packages/19/5e/23dcc0ce3cc2abe92efd3cd61d764bee6ccdf1b667a1fb566f45dc249953/Pillow-7.0.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting protobuf==3.11.3 (from -r /tmp/app/requirements.txt (line 20))
+            Using cached https://files.pythonhosted.org/packages/57/02/5432412c162989260fab61fa65e0a490c1872739eb91a659896e4d554b26/protobuf-3.11.3-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting PyYAML==5.3.1 (from -r /tmp/app/requirements.txt (line 21))
+            Using cached https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz
+          Collecting scipy==1.4.1 (from -r /tmp/app/requirements.txt (line 22))
+            Using cached https://files.pythonhosted.org/packages/dc/29/162476fd44203116e7980cfbd9352eef9db37c49445d1fec35509022f6aa/scipy-1.4.1-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting six==1.14.0 (from -r /tmp/app/requirements.txt (line 23))
+            Using cached https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+          Collecting tensorboard==1.14.0 (from -r /tmp/app/requirements.txt (line 24))
+            Using cached https://files.pythonhosted.org/packages/91/2d/2ed263449a078cd9c8a9ba50ebd50123adf1f8cfbea1492f9084169b89d9/tensorboard-1.14.0-py3-none-any.whl
+          Collecting tensorflow==1.14.0 (from -r /tmp/app/requirements.txt (line 25))
+            Using cached https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting tensorflow-estimator==1.14.0 (from -r /tmp/app/requirements.txt (line 26))
+            Using cached https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-1.14.0-py2.py3-none-any.whl
+          Collecting termcolor==1.1.0 (from -r /tmp/app/requirements.txt (line 27))
+            Using cached https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz
+          Collecting Werkzeug==1.0.0 (from -r /tmp/app/requirements.txt (line 28))
+            Using cached https://files.pythonhosted.org/packages/ba/a5/d6f8a6e71f15364d35678a4ec8a0186f980b3bd2545f40ad51dd26a87fb1/Werkzeug-1.0.0-py2.py3-none-any.whl
+          Collecting wrapt==1.12.1 (from -r /tmp/app/requirements.txt (line 29))
+            Using cached https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz
+          Collecting setuptools>=36 (from Markdown==3.2.1->-r /tmp/app/requirements.txt (line 16))
+            Using cached https://files.pythonhosted.org/packages/a0/df/635cdb901ee4a8a42ec68e480c49f85f4c59e8816effbf57d9e6ee8b3588/setuptools-46.1.3-py3-none-any.whl
+          Collecting wheel>=0.26; python_version >= "3" (from tensorboard==1.14.0->-r /tmp/app/requirements.txt (line 24))
+            Using cached https://files.pythonhosted.org/packages/8c/23/848298cccf8e40f5bbb59009b32848a4c38f4e7f3364297ab3c3e2e2cd14/wheel-0.34.2-py2.py3-none-any.whl
+          Installing collected packages: six, absl-py, astor, certifi, click, itsdangerous, MarkupSafe, Jinja2, Werkzeug, Flask, Flask-Cors, gast, google-pasta, grpcio, numpy, h5py, PyYAML, Keras-Preprocessing, scipy, Keras-Applications, Keras, setuptools, Markdown, Pillow, protobuf, wheel, tensorboard, wrapt, termcolor, tensorflow-estimator, tensorflow
+            Running setup.py install for absl-py: started
+              Running setup.py install for absl-py: finished with status 'done'
+            The script flask is installed in '/tmp/contents318472201/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The scripts f2py, f2py3 and f2py3.6 are installed in '/tmp/contents318472201/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            Running setup.py install for PyYAML: started
+              Running setup.py install for PyYAML: finished with status 'done'
+            The script markdown_py is installed in '/tmp/contents318472201/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The script wheel is installed in '/tmp/contents318472201/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The script tensorboard is installed in '/tmp/contents318472201/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            Running setup.py install for wrapt: started
+              Running setup.py install for wrapt: finished with status 'done'
+            Running setup.py install for termcolor: started
+              Running setup.py install for termcolor: finished with status 'done'
+            The scripts freeze_graph, saved_model_cli, tensorboard, tf_upgrade_v2, tflite_convert, toco and toco_from_protos are installed in '/tmp/contents318472201/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+          Successfully installed Flask-1.1.1 Flask-Cors-3.0.8 Jinja2-2.11.1 Keras-2.3.1 Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.2.1 MarkupSafe-1.1.1 Pillow-7.0.0 PyYAML-5.3.1 Werkzeug-1.0.0 absl-py-0.9.0 astor-0.8.1 certifi-2019.11.28 click-7.1.1 gast-0.3.3 google-pasta-0.2.0 grpcio-1.27.2 h5py-2.10.0 itsdangerous-1.1.0 numpy-1.18.2 protobuf-3.11.3 scipy-1.4.1 setuptools-46.1.3 six-1.14.0 tensorboard-1.14.0 tensorflow-1.14.0 tensorflow-estimator-1.14.0 termcolor-1.1.0 wheel-0.34.2 wrapt-1.12.1
+          You are using pip version 18.1, however version 20.0.2 is available.
+          You should consider upgrading via the 'pip install --upgrade pip' command.
+   Exit status 0
+   Uploading droplet, build artifacts cache...
+   Uploading droplet...
+   Uploading build artifacts cache...
+   Uploaded build artifacts cache (160.1M)
+   Uploaded droplet (257.9M)
+   Uploading complete
+   Cell 9aa90abe-6a8f-4485-90d1-71da907de9a3 stopping instance b92fc5c9-2621-4a9d-b56d-15ea4c1768f2
+   Cell 9aa90abe-6a8f-4485-90d1-71da907de9a3 destroying container for instance b92fc5c9-2621-4a9d-b56d-15ea4c1768f2
+   Cell 9aa90abe-6a8f-4485-90d1-71da907de9a3 successfully destroyed container for instance b92fc5c9-2621-4a9d-b56d-15ea4c1768f2
+
+
+
+
+
+
+Waiting for app to start...
+Start unsuccessful
+
+
+TIP: use 'cf logs catdogclassifier --recent' for more information
+FAILED
+
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf logs catdogclassifier --recent
+
+
+
+
+
+
+
+
+
+
+
+Retrieving logs for app catdogclassifier in org My_First_CNN_Deployment_PCP / space development as patilgauravdharmraj@gmail.com...
+
+   2020-04-06T23:59:45.10+0530 [API/7] OUT Updated app with guid fd2c4a68-fbbc-43fe-a646-e3316b282239 ({"buildpack"=>"", "disk_quota"=>1536, "health_check_http_endpoint"=>"", "health_check_type"=>"port", "instances"=>1, "memory"=>1536, "name"=>"catdogclassifier", "space_guid"=>"04d39040-e30f-4053-844d-226f037da2f5"})
+   2020-04-06T23:59:48.55+0530 [API/17] OUT Uploading bits for app with guid fd2c4a68-fbbc-43fe-a646-e3316b282239
+   2020-04-06T23:59:59.51+0530 [API/16] OUT Updated app with guid fd2c4a68-fbbc-43fe-a646-e3316b282239 ({"state"=>"STOPPED"})
+   2020-04-07T00:00:00.02+0530 [API/3] OUT Creating build for app with guid fd2c4a68-fbbc-43fe-a646-e3316b282239
+   2020-04-07T00:00:01.48+0530 [API/3] OUT Updated app with guid fd2c4a68-fbbc-43fe-a646-e3316b282239 ({"state"=>"STARTED"})
+   2020-04-07T00:00:01.71+0530 [STG/0] OUT Downloading java_buildpack...
+   2020-04-07T00:00:01.71+0530 [STG/0] OUT Downloading ruby_buildpack...
+   2020-04-07T00:00:01.72+0530 [STG/0] OUT Downloading python_buildpack...
+   2020-04-07T00:00:01.72+0530 [STG/0] OUT Downloading php_buildpack...
+   2020-04-07T00:00:01.72+0530 [STG/0] OUT Downloading go_buildpack...
+   2020-04-07T00:00:01.76+0530 [STG/0] OUT Downloaded ruby_buildpack
+   2020-04-07T00:00:01.76+0530 [STG/0] OUT Downloaded java_buildpack
+   2020-04-07T00:00:01.76+0530 [STG/0] OUT Downloading staticfile_buildpack...
+   2020-04-07T00:00:01.76+0530 [STG/0] OUT Downloaded go_buildpack
+   2020-04-07T00:00:01.76+0530 [STG/0] OUT Downloading binary_buildpack...
+   2020-04-07T00:00:01.78+0530 [STG/0] OUT Downloading dotnet_core_buildpack_beta...
+   2020-04-07T00:00:01.79+0530 [STG/0] OUT Downloaded binary_buildpack
+   2020-04-07T00:00:01.79+0530 [STG/0] OUT Downloading dotnet_core_buildpack...
+   2020-04-07T00:00:01.80+0530 [STG/0] OUT Downloaded python_buildpack
+   2020-04-07T00:00:01.80+0530 [STG/0] OUT Downloading nodejs_buildpack...
+   2020-04-07T00:00:01.81+0530 [STG/0] OUT Downloaded php_buildpack
+   2020-04-07T00:00:01.81+0530 [STG/0] OUT Downloading web_config_transform_buildpack...
+   2020-04-07T00:00:01.82+0530 [STG/0] OUT Downloaded staticfile_buildpack
+   2020-04-07T00:00:01.82+0530 [STG/0] OUT Downloaded dotnet_core_buildpack
+   2020-04-07T00:00:01.84+0530 [STG/0] OUT Downloaded nodejs_buildpack
+   2020-04-07T00:00:01.85+0530 [STG/0] OUT Downloaded dotnet_core_buildpack_beta
+   2020-04-07T00:00:01.89+0530 [STG/0] OUT Downloaded web_config_transform_buildpack
+   2020-04-07T00:00:01.89+0530 [STG/0] OUT Cell 9aa90abe-6a8f-4485-90d1-71da907de9a3 creating container for instance b92fc5c9-2621-4a9d-b56d-15ea4c1768f2
+   2020-04-07T00:00:03.27+0530 [STG/0] OUT Cell 9aa90abe-6a8f-4485-90d1-71da907de9a3 successfully created container for instance b92fc5c9-2621-4a9d-b56d-15ea4c1768f2
+   2020-04-07T00:00:03.73+0530 [STG/0] OUT Downloading app package...
+   2020-04-07T00:00:03.73+0530 [STG/0] OUT Downloading build artifacts cache...
+   2020-04-07T00:00:07.02+0530 [STG/0] OUT Downloaded app package (37.7M)
+   2020-04-07T00:00:09.89+0530 [STG/0] OUT Downloaded build artifacts cache (160.1M)
+   2020-04-07T00:02:14.16+0530 [STG/0] ERR ERROR: No buildpack groups passed detection.
+   2020-04-07T00:10:19.42+0530 [APP/PROC/WEB/0] ERR   File "clientApp.py", line 56, in <module>
+   2020-04-07T00:10:19.42+0530 [APP/PROC/WEB/0] ERR     app.run(debug=True, port = port)              # Change it to app.run(debug=True) to execute locally
+   2020-04-07T00:10:19.42+0530 [APP/PROC/WEB/0] ERR NameError: name 'port' is not defined
+   2020-04-07T00:10:19.71+0530 [APP/PROC/WEB/0] OUT Exit status 1
+   2020-04-07T00:10:19.72+0530 [CELL/SSHD/0] OUT Exit status 0
+   2020-04-07T00:10:25.30+0530 [CELL/0] OUT Cell 48a1dad0-0bbb-45e4-8a7b-db133df48532 stopping instance 7c4464dd-aaa5-4395-6b6e-8791
+   2020-04-07T00:10:25.30+0530 [CELL/0] OUT Cell 48a1dad0-0bbb-45e4-8a7b-db133df48532 destroying container for instance 7c4464dd-aaa5-4395-6b6e-8791
+   2020-04-07T00:10:25.32+0530 [API/19] OUT Process has crashed with type: "web"
+   2020-04-07T00:10:25.34+0530 [API/19] OUT App instance exited with guid fd2c4a68-fbbc-43fe-a646-e3316b282239 payload: {"instance"=>"7c4464dd-aaa5-4395-6b6e-8791", "index"=>0, "cell_id"=>"48a1dad0-0bbb-45e4-8a7b-db133df48532", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>5, "crash_timestamp"=>1586198425293509830, "version"=>"bdd190ba-dd6e-487b-be43-1cf3a44b1380"}
+   2020-04-07T00:10:25.57+0530 [PROXY/0] OUT Exit status 137
+   2020-04-07T00:10:27.94+0530 [CELL/0] OUT Cell 48a1dad0-0bbb-45e4-8a7b-db133df48532 successfully destroyed container for instance 7c4464dd-aaa5-4395-6b6e-8791
+   2020-04-07T00:12:37.49+0530 [CELL/0] OUT Cell de99b443-f425-41f5-ac44-c22106f0ad6e creating container for instance 3981284d-f625-4b87-49a6-a895
+   2020-04-07T00:12:38.62+0530 [CELL/0] OUT Cell de99b443-f425-41f5-ac44-c22106f0ad6e successfully created container for instance 3981284d-f625-4b87-49a6-a895
+   2020-04-07T00:12:39.10+0530 [CELL/0] OUT Downloading droplet...
+   2020-04-07T00:13:34.02+0530 [CELL/0] OUT Downloaded droplet (257.9M)
+   2020-04-07T00:13:34.02+0530 [CELL/0] OUT Starting health monitoring of container
+   2020-04-07T00:13:41.84+0530 [APP/PROC/WEB/0] ERR Using TensorFlow backend.
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR   _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR   _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR   _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR   _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR   _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:42.43+0530 [APP/PROC/WEB/0] ERR   np_resource = np.dtype([("resource", np.ubyte, 1)])
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR   _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR   _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR   _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR   _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR   _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR /home/vcap/deps/0/python/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+   2020-04-07T00:13:44.68+0530 [APP/PROC/WEB/0] ERR   np_resource = np.dtype([("resource", np.ubyte, 1)])
+   2020-04-07T00:13:44.83+0530 [APP/PROC/WEB/0] ERR Traceback (most recent call last):
+   2020-04-07T00:13:44.83+0530 [APP/PROC/WEB/0] ERR   File "clientApp.py", line 56, in <module>
+   2020-04-07T00:13:44.84+0530 [APP/PROC/WEB/0] ERR     app.run(debug=True, port = port)     # Change it to app.run(debug=True) to execute locally
+
+
+
+
+
+
+
+
+
+
+
+
+   2020-04-07T00:13:44.84+0530 [APP/PROC/WEB/0] ERR NameError: name 'port' is not defined
+
+
+
+
+
+
+
+
+   2020-04-07T00:13:45.12+0530 [APP/PROC/WEB/0] OUT Exit status 1
+   2020-04-07T00:13:45.12+0530 [CELL/SSHD/0] OUT Exit status 0
+   2020-04-07T00:13:50.90+0530 [CELL/0] OUT Cell de99b443-f425-41f5-ac44-c22106f0ad6e stopping instance 3981284d-f625-4b87-49a6-a895
+   2020-04-07T00:13:50.90+0530 [CELL/0] OUT Cell de99b443-f425-41f5-ac44-c22106f0ad6e destroying container for instance 3981284d-f625-4b87-49a6-a895
+   2020-04-07T00:13:50.93+0530 [API/17] OUT Process has crashed with type: "web"
+   2020-04-07T00:13:50.95+0530 [API/17] OUT App instance exited with guid fd2c4a68-fbbc-43fe-a646-e3316b282239 payload: {"instance"=>"3981284d-f625-4b87-49a6-a895", "index"=>0, "cell_id"=>"de99b443-f425-41f5-ac44-c22106f0ad6e", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>6, "crash_timestamp"=>1586198630897546457, "version"=>"bdd190ba-dd6e-487b-be43-1cf3a44b1380"}
+   2020-04-07T00:13:51.15+0530 [PROXY/0] OUT Exit status 137
+   2020-04-07T00:13:53.72+0530 [CELL/0] OUT Cell de99b443-f425-41f5-ac44-c22106f0ad6e successfully destroyed container for instance 3981284d-f625-4b87-49a6-a895
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf login
+API endpoint: https://api.run.pivotal.io
+
+Email: patilgauravdharmraj@2[D [D[D [D[D [D[D [D[D [D[D [D
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf login
+API endpoint: https://api.run.pivotal.io
+
+Email: patilgauravdharmraj@gmail.com
+
+Password:
+Authenticating...
+OK
+
+Targeted org My_First_CNN_Deployment_PCP
+
+Targeted space development
+
+
+
+API endpoint:   https://api.run.pivotal.io (API version: 3.81.0)
+User:           patilgauravdharmraj@gmail.com
+Org:            My_First_CNN_Deployment_PCP
+Space:          development
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf push
+Pushing from manifest to org My_First_CNN_Deployment_PCP / space development as patilgauravdharmraj@gmail.com...
+Using manifest file C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_\manifest.yml
+Getting app info...
+Updating app with these attributes...
+  name:                catdogclassifier
+  path:                C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_
+  command:             python clientApp.py   --master --processes 4 --threads 2
+  disk quota:          1.5G
+  health check type:   port
+  instances:           1
+  memory:              1.5G
+  stack:               cflinuxfs3
+  routes:
+    catdogclassifier-agile-roan-fs.cfapps.io
+
+Updating app catdogclassifier...
+Mapping routes...
+Comparing local files to remote cache...
+Packaging files to upload...
+Uploading files...
+ 37.71 KiB / 37.71 KiB [===================================================================================] 100.00% 1s
+
+Waiting for API to complete processing files...
+
+Stopping app...
+
+Staging app and tracing logs...
+   ERROR: No buildpack groups passed detection.
+   ERROR: Please check that you are running against the correct path.
+   ERROR: failed to detect: no buildpacks participating
+   -----> Python Buildpack version 1.7.12
+   -----> Supplying Python
+   -----> Installing python 3.6.10
+          Copy [/tmp/buildpacks/14a02f234499563019edf69bb789b437/dependencies/0c19021d97cb1d7b05a10c3715e4867a/python-3.6.10-linux-x64-cflinuxfs3-3bb086eb.tgz]
+   -----> Installing pip-pop 0.1.4
+Failed to retrieve logs from Log Cache: unexpected status code 404
+
+          Copy [/tmp/buildpacks/14a02f234499563019edf69bb789b437/dependencies/1cd0187e0e714e99bef932d4c22f6515/pip-pop-0.1.4-0a3b0f1b.tar.gz]
+Failed to retrieve logs from Log Cache: unexpected status code 404
+
+   -----> Running Pip Install
+          Collecting absl-py==0.9.0 (from -r /tmp/app/requirements.txt (line 1))
+            Using cached https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz
+Failed to retrieve logs from Log Cache: unexpected status code 404
+
+Failed to retrieve logs from Log Cache: unexpected status code 404
+
+Failed to retrieve logs from Log Cache: unexpected status code 404
+
+          Collecting astor==0.8.1 (from -r /tmp/app/requirements.txt (line 2))
+            Using cached https://files.pythonhosted.org/packages/c3/88/97eef84f48fa04fbd6750e62dcceafba6c63c81b7ac1420856c8dcc0a3f9/astor-0.8.1-py2.py3-none-any.whl
+          Collecting certifi==2019.11.28 (from -r /tmp/app/requirements.txt (line 3))
+            Using cached https://files.pythonhosted.org/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl
+          Collecting click==7.1.1 (from -r /tmp/app/requirements.txt (line 4))
+            Using cached https://files.pythonhosted.org/packages/dd/c0/4d8f43a9b16e289f36478422031b8a63b54b6ac3b1ba605d602f10dd54d6/click-7.1.1-py2.py3-none-any.whl
+          Collecting Flask==1.1.1 (from -r /tmp/app/requirements.txt (line 5))
+            Using cached https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl
+          Collecting Flask-Cors==3.0.8 (from -r /tmp/app/requirements.txt (line 6))
+            Using cached https://files.pythonhosted.org/packages/78/38/e68b11daa5d613e3a91e4bf3da76c94ac9ee0d9cd515af9c1ab80d36f709/Flask_Cors-3.0.8-py2.py3-none-any.whl
+          Collecting gast==0.3.3 (from -r /tmp/app/requirements.txt (line 7))
+            Using cached https://files.pythonhosted.org/packages/d6/84/759f5dd23fec8ba71952d97bcc7e2c9d7d63bdc582421f3cd4be845f0c98/gast-0.3.3-py2.py3-none-any.whl
+          Collecting google-pasta==0.2.0 (from -r /tmp/app/requirements.txt (line 8))
+            Using cached https://files.pythonhosted.org/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl
+          Collecting grpcio==1.27.2 (from -r /tmp/app/requirements.txt (line 9))
+            Using cached https://files.pythonhosted.org/packages/f1/97/bece4417f349f8f83252232ef66ea63eb47f8044ca61b51e2a478e2c7a94/grpcio-1.27.2-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting h5py==2.10.0 (from -r /tmp/app/requirements.txt (line 10))
+            Using cached https://files.pythonhosted.org/packages/60/06/cafdd44889200e5438b897388f3075b52a8ef01f28a17366d91de0fa2d05/h5py-2.10.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting itsdangerous==1.1.0 (from -r /tmp/app/requirements.txt (line 11))
+            Using cached https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+          Collecting Jinja2==2.11.1 (from -r /tmp/app/requirements.txt (line 12))
+            Using cached https://files.pythonhosted.org/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl
+          Collecting Keras==2.3.1 (from -r /tmp/app/requirements.txt (line 13))
+            Using cached https://files.pythonhosted.org/packages/ad/fd/6bfe87920d7f4fd475acd28500a42482b6b84479832bdc0fe9e589a60ceb/Keras-2.3.1-py2.py3-none-any.whl
+          Collecting Keras-Applications==1.0.8 (from -r /tmp/app/requirements.txt (line 14))
+            Using cached https://files.pythonhosted.org/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl
+          Collecting Keras-Preprocessing==1.1.0 (from -r /tmp/app/requirements.txt (line 15))
+            Using cached https://files.pythonhosted.org/packages/28/6a/8c1f62c37212d9fc441a7e26736df51ce6f0e38455816445471f10da4f0a/Keras_Preprocessing-1.1.0-py2.py3-none-any.whl
+          Collecting Markdown==3.2.1 (from -r /tmp/app/requirements.txt (line 16))
+            Using cached https://files.pythonhosted.org/packages/ab/c4/ba46d44855e6eb1770a12edace5a165a0c6de13349f592b9036257f3c3d3/Markdown-3.2.1-py2.py3-none-any.whl
+          Collecting MarkupSafe==1.1.1 (from -r /tmp/app/requirements.txt (line 17))
+            Using cached https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting numpy==1.18.2 (from -r /tmp/app/requirements.txt (line 18))
+            Using cached https://files.pythonhosted.org/packages/07/08/a549ba8b061005bb629b76adc000f3caaaf881028b963c2e18f811c6edc1/numpy-1.18.2-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting Pillow==7.0.0 (from -r /tmp/app/requirements.txt (line 19))
+            Using cached https://files.pythonhosted.org/packages/19/5e/23dcc0ce3cc2abe92efd3cd61d764bee6ccdf1b667a1fb566f45dc249953/Pillow-7.0.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting protobuf==3.11.3 (from -r /tmp/app/requirements.txt (line 20))
+            Using cached https://files.pythonhosted.org/packages/57/02/5432412c162989260fab61fa65e0a490c1872739eb91a659896e4d554b26/protobuf-3.11.3-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting PyYAML==5.3.1 (from -r /tmp/app/requirements.txt (line 21))
+            Using cached https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz
+          Collecting scipy==1.4.1 (from -r /tmp/app/requirements.txt (line 22))
+            Using cached https://files.pythonhosted.org/packages/dc/29/162476fd44203116e7980cfbd9352eef9db37c49445d1fec35509022f6aa/scipy-1.4.1-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting six==1.14.0 (from -r /tmp/app/requirements.txt (line 23))
+            Using cached https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+          Collecting tensorboard==1.14.0 (from -r /tmp/app/requirements.txt (line 24))
+            Using cached https://files.pythonhosted.org/packages/91/2d/2ed263449a078cd9c8a9ba50ebd50123adf1f8cfbea1492f9084169b89d9/tensorboard-1.14.0-py3-none-any.whl
+          Collecting tensorflow==1.14.0 (from -r /tmp/app/requirements.txt (line 25))
+            Using cached https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting tensorflow-estimator==1.14.0 (from -r /tmp/app/requirements.txt (line 26))
+            Using cached https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-1.14.0-py2.py3-none-any.whl
+          Collecting termcolor==1.1.0 (from -r /tmp/app/requirements.txt (line 27))
+            Using cached https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz
+          Collecting Werkzeug==1.0.0 (from -r /tmp/app/requirements.txt (line 28))
+            Using cached https://files.pythonhosted.org/packages/ba/a5/d6f8a6e71f15364d35678a4ec8a0186f980b3bd2545f40ad51dd26a87fb1/Werkzeug-1.0.0-py2.py3-none-any.whl
+          Collecting wrapt==1.12.1 (from -r /tmp/app/requirements.txt (line 29))
+            Using cached https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz
+          Collecting setuptools>=36 (from Markdown==3.2.1->-r /tmp/app/requirements.txt (line 16))
+            Using cached https://files.pythonhosted.org/packages/a0/df/635cdb901ee4a8a42ec68e480c49f85f4c59e8816effbf57d9e6ee8b3588/setuptools-46.1.3-py3-none-any.whl
+          Collecting wheel>=0.26; python_version >= "3" (from tensorboard==1.14.0->-r /tmp/app/requirements.txt (line 24))
+            Using cached https://files.pythonhosted.org/packages/8c/23/848298cccf8e40f5bbb59009b32848a4c38f4e7f3364297ab3c3e2e2cd14/wheel-0.34.2-py2.py3-none-any.whl
+          Installing collected packages: six, absl-py, astor, certifi, click, itsdangerous, Werkzeug, MarkupSafe, Jinja2, Flask, Flask-Cors, gast, google-pasta, grpcio, numpy, h5py, scipy, Keras-Applications, PyYAML, Keras-Preprocessing, Keras, setuptools, Markdown, Pillow, protobuf, wheel, tensorboard, wrapt, tensorflow-estimator, termcolor, tensorflow
+            Running setup.py install for absl-py: started
+              Running setup.py install for absl-py: finished with status 'done'
+            The script flask is installed in '/tmp/contents879692466/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The scripts f2py, f2py3 and f2py3.6 are installed in '/tmp/contents879692466/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            Running setup.py install for PyYAML: started
+              Running setup.py install for PyYAML: finished with status 'done'
+            The script markdown_py is installed in '/tmp/contents879692466/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The script wheel is installed in '/tmp/contents879692466/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The script tensorboard is installed in '/tmp/contents879692466/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            Running setup.py install for wrapt: started
+              Running setup.py install for wrapt: finished with status 'done'
+            Running setup.py install for termcolor: started
+              Running setup.py install for termcolor: finished with status 'done'
+            The scripts freeze_graph, saved_model_cli, tensorboard, tf_upgrade_v2, tflite_convert, toco and toco_from_protos are installed in '/tmp/contents879692466/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+          Successfully installed Flask-1.1.1 Flask-Cors-3.0.8 Jinja2-2.11.1 Keras-2.3.1 Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.2.1 MarkupSafe-1.1.1 Pillow-7.0.0 PyYAML-5.3.1 Werkzeug-1.0.0 absl-py-0.9.0 astor-0.8.1 certifi-2019.11.28 click-7.1.1 gast-0.3.3 google-pasta-0.2.0 grpcio-1.27.2 h5py-2.10.0 itsdangerous-1.1.0 numpy-1.18.2 protobuf-3.11.3 scipy-1.4.1 setuptools-46.1.3 six-1.14.0 tensorboard-1.14.0 tensorflow-1.14.0 tensorflow-estimator-1.14.0 termcolor-1.1.0 wheel-0.34.2 wrapt-1.12.1
+          You are using pip version 18.1, however version 20.0.2 is available.
+          You should consider upgrading via the 'pip install --upgrade pip' command.
+   Exit status 0
+   Uploading droplet, build artifacts cache...
+   Uploading build artifacts cache...
+   Uploading droplet...
+   Uploaded build artifacts cache (160.1M)
+   Uploaded droplet (257.9M)
+   Uploading complete
+   Cell ccbb6c0b-fe8a-4497-bbda-4c5b42a369bf stopping instance 62bb44f8-99cc-4dbb-8751-267219d6a52a
+   Cell ccbb6c0b-fe8a-4497-bbda-4c5b42a369bf destroying container for instance 62bb44f8-99cc-4dbb-8751-267219d6a52a
+   Cell ccbb6c0b-fe8a-4497-bbda-4c5b42a369bf successfully destroyed container for instance 62bb44f8-99cc-4dbb-8751-267219d6a52a
+
+Waiting for app to start...
+
+name:              catdogclassifier
+requested state:   started
+routes:            catdogclassifier-agile-roan-fs.cfapps.io
+last uploaded:     Tue 07 Apr 00:24:31 IST 2020
+stack:             cflinuxfs3
+buildpacks:        python
+
+type:            web
+instances:       1/1
+memory usage:    1536M
+start command:   python clientApp.py   --master --processes 4 --threads 2
+     state     since                  cpu    memory           disk             details
+#0   running   2020-04-06T18:55:48Z   0.4%   118.4M of 1.5G   926.4M of 1.5G
+
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>Happy Deployed successfully
+'Happy' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>Link is https://catdogclassifier-agile-roan-fs.cfapps.io/
+'Link' is not recognized as an internal or external command,
+operable program or batch file.
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>   

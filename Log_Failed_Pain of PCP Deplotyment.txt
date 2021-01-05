@@ -1,0 +1,338 @@
+
+(base) C:\Users\patil>activate Deployment_dogcat_new_
+
+(Deployment_dogcat_new_) C:\Users\patil>cd  C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf login
+API endpoint: patilgauravdharmraj@gmail.com
+
+Invalid JSON content from server: invalid character '<' looking for beginning of value
+FAILED
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf push
+No API endpoint set. Use 'cf login' or 'cf api' to target an endpoint.
+FAILED
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf login
+API endpoint: https:\\[D [D[D [D[D [D[D [D[D [D[D [D
+
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>^Z^Z^Z^Z^Z
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf login
+API endpoint: htt[[D [Dps[D [D[D [D[D [D[D [D[D [DEOF
+FAILED
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf login
+API endpoint: https://api.run.pivotal.io
+
+Email: patilgauravdharmraj@gmail.com
+
+Password:
+Authenticating...
+Credentials were rejected, please try again.
+
+
+Password:
+Authenticating...
+OK
+
+Targeted org My_First_CNN_Deployment_PCP
+
+Targeted space development
+
+
+
+API endpoint:   https://api.run.pivotal.io (API version: 3.81.0)
+User:           patilgauravdharmraj@gmail.com
+Org:            My_First_CNN_Deployment_PCP
+Space:          development
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf push
+Pushing from manifest to org My_First_CNN_Deployment_PCP / space development as patilgauravdharmraj@gmail.com...
+Using manifest file C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_\manifest.yml
+Getting app info...
+Creating app with these attributes...
++ name:         catdogclassifier
+  path:         C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_
++ disk quota:   1.5G
++ memory:       1.5G
+  routes:
++   catdogclassifier-agile-roan-fs.cfapps.io
+
+Creating app catdogclassifier...
+Mapping routes...
+Comparing local files to remote cache...
+Packaging files to upload...
+Uploading files...
+ 30.18 MiB / 30.18 MiB [==================================================================================] 100.00% 40s
+
+Waiting for API to complete processing files...
+
+Staging app and tracing logs...
+   Downloaded app package (36.5M)
+   ERROR: No buildpack groups passed detection.
+   ERROR: Please check that you are running against the correct path.
+   ERROR: failed to detect: no buildpacks participating
+   -----> Python Buildpack version 1.7.11
+   -----> Supplying Python
+   -----> Installing python 3.6.10
+          Copy [/tmp/buildpacks/a554f901a17cd0daf2a12e6ccfef600c/dependencies/0c19021d97cb1d7b05a10c3715e4867a/python-3.6.10-linux-x64-cflinuxfs3-3bb086eb.tgz]
+   -----> Installing pip-pop 0.1.4
+          Copy [/tmp/buildpacks/a554f901a17cd0daf2a12e6ccfef600c/dependencies/1cd0187e0e714e99bef932d4c22f6515/pip-pop-0.1.4-0a3b0f1b.tar.gz]
+   -----> Running Pip Install
+          Collecting absl-py==0.9.0 (from -r /tmp/app/requirements.txt (line 1))
+            Downloading https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz (104kB)
+          Collecting astor==0.8.1 (from -r /tmp/app/requirements.txt (line 2))
+            Downloading https://files.pythonhosted.org/packages/c3/88/97eef84f48fa04fbd6750e62dcceafba6c63c81b7ac1420856c8dcc0a3f9/astor-0.8.1-py2.py3-none-any.whl
+          Collecting certifi==2019.11.28 (from -r /tmp/app/requirements.txt (line 3))
+            Downloading https://files.pythonhosted.org/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl (156kB)
+          Collecting click==7.1.1 (from -r /tmp/app/requirements.txt (line 4))
+            Downloading https://files.pythonhosted.org/packages/dd/c0/4d8f43a9b16e289f36478422031b8a63b54b6ac3b1ba605d602f10dd54d6/click-7.1.1-py2.py3-none-any.whl (82kB)
+          Collecting Flask==1.1.1 (from -r /tmp/app/requirements.txt (line 5))
+            Downloading https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl (94kB)
+          Collecting Flask-Cors==3.0.8 (from -r /tmp/app/requirements.txt (line 6))
+            Downloading https://files.pythonhosted.org/packages/78/38/e68b11daa5d613e3a91e4bf3da76c94ac9ee0d9cd515af9c1ab80d36f709/Flask_Cors-3.0.8-py2.py3-none-any.whl
+          Collecting gast==0.3.3 (from -r /tmp/app/requirements.txt (line 7))
+            Downloading https://files.pythonhosted.org/packages/d6/84/759f5dd23fec8ba71952d97bcc7e2c9d7d63bdc582421f3cd4be845f0c98/gast-0.3.3-py2.py3-none-any.whl
+          Collecting google-pasta==0.2.0 (from -r /tmp/app/requirements.txt (line 8))
+            Downloading https://files.pythonhosted.org/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57kB)
+          Collecting grpcio==1.27.2 (from -r /tmp/app/requirements.txt (line 9))
+            Downloading https://files.pythonhosted.org/packages/f1/97/bece4417f349f8f83252232ef66ea63eb47f8044ca61b51e2a478e2c7a94/grpcio-1.27.2-cp36-cp36m-manylinux1_x86_64.whl (2.7MB)
+          Collecting h5py==2.10.0 (from -r /tmp/app/requirements.txt (line 10))
+            Downloading https://files.pythonhosted.org/packages/60/06/cafdd44889200e5438b897388f3075b52a8ef01f28a17366d91de0fa2d05/h5py-2.10.0-cp36-cp36m-manylinux1_x86_64.whl (2.9MB)
+          Collecting itsdangerous==1.1.0 (from -r /tmp/app/requirements.txt (line 11))
+            Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+          Collecting Jinja2==2.11.1 (from -r /tmp/app/requirements.txt (line 12))
+            Downloading https://files.pythonhosted.org/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl (126kB)
+          Collecting Keras==2.3.1 (from -r /tmp/app/requirements.txt (line 13))
+            Downloading https://files.pythonhosted.org/packages/ad/fd/6bfe87920d7f4fd475acd28500a42482b6b84479832bdc0fe9e589a60ceb/Keras-2.3.1-py2.py3-none-any.whl (377kB)
+          Collecting Keras-Applications==1.0.8 (from -r /tmp/app/requirements.txt (line 14))
+            Downloading https://files.pythonhosted.org/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50kB)
+          Collecting Keras-Preprocessing==1.1.0 (from -r /tmp/app/requirements.txt (line 15))
+            Downloading https://files.pythonhosted.org/packages/28/6a/8c1f62c37212d9fc441a7e26736df51ce6f0e38455816445471f10da4f0a/Keras_Preprocessing-1.1.0-py2.py3-none-any.whl (41kB)
+          Collecting Markdown==3.2.1 (from -r /tmp/app/requirements.txt (line 16))
+            Downloading https://files.pythonhosted.org/packages/ab/c4/ba46d44855e6eb1770a12edace5a165a0c6de13349f592b9036257f3c3d3/Markdown-3.2.1-py2.py3-none-any.whl (88kB)
+          Collecting MarkupSafe==1.1.1 (from -r /tmp/app/requirements.txt (line 17))
+            Downloading https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting numpy==1.18.2 (from -r /tmp/app/requirements.txt (line 18))
+            Downloading https://files.pythonhosted.org/packages/07/08/a549ba8b061005bb629b76adc000f3caaaf881028b963c2e18f811c6edc1/numpy-1.18.2-cp36-cp36m-manylinux1_x86_64.whl (20.2MB)
+          Collecting Pillow==7.0.0 (from -r /tmp/app/requirements.txt (line 19))
+            Downloading https://files.pythonhosted.org/packages/19/5e/23dcc0ce3cc2abe92efd3cd61d764bee6ccdf1b667a1fb566f45dc249953/Pillow-7.0.0-cp36-cp36m-manylinux1_x86_64.whl (2.1MB)
+          Collecting protobuf==3.11.3 (from -r /tmp/app/requirements.txt (line 20))
+            Downloading https://files.pythonhosted.org/packages/57/02/5432412c162989260fab61fa65e0a490c1872739eb91a659896e4d554b26/protobuf-3.11.3-cp36-cp36m-manylinux1_x86_64.whl (1.3MB)
+          Collecting PyYAML==5.3.1 (from -r /tmp/app/requirements.txt (line 21))
+            Downloading https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz (269kB)
+          Collecting scipy==1.4.1 (from -r /tmp/app/requirements.txt (line 22))
+            Downloading https://files.pythonhosted.org/packages/dc/29/162476fd44203116e7980cfbd9352eef9db37c49445d1fec35509022f6aa/scipy-1.4.1-cp36-cp36m-manylinux1_x86_64.whl (26.1MB)
+          Collecting six==1.14.0 (from -r /tmp/app/requirements.txt (line 23))
+            Downloading https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+          Collecting tensorboard==1.14.0 (from -r /tmp/app/requirements.txt (line 24))
+            Downloading https://files.pythonhosted.org/packages/91/2d/2ed263449a078cd9c8a9ba50ebd50123adf1f8cfbea1492f9084169b89d9/tensorboard-1.14.0-py3-none-any.whl (3.1MB)
+          Collecting tensorflow==1.14.0 (from -r /tmp/app/requirements.txt (line 25))
+            Downloading https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl (109.2MB)
+          Collecting tensorflow-estimator==1.14.0 (from -r /tmp/app/requirements.txt (line 26))
+            Downloading https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-1.14.0-py2.py3-none-any.whl (488kB)
+          Collecting termcolor==1.1.0 (from -r /tmp/app/requirements.txt (line 27))
+            Downloading https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz
+          Collecting Werkzeug==1.0.0 (from -r /tmp/app/requirements.txt (line 28))
+            Downloading https://files.pythonhosted.org/packages/ba/a5/d6f8a6e71f15364d35678a4ec8a0186f980b3bd2545f40ad51dd26a87fb1/Werkzeug-1.0.0-py2.py3-none-any.whl (298kB)
+          Collecting wrapt==1.12.1 (from -r /tmp/app/requirements.txt (line 29))
+            Downloading https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz
+          Collecting setuptools>=36 (from Markdown==3.2.1->-r /tmp/app/requirements.txt (line 16))
+            Downloading https://files.pythonhosted.org/packages/a0/df/635cdb901ee4a8a42ec68e480c49f85f4c59e8816effbf57d9e6ee8b3588/setuptools-46.1.3-py3-none-any.whl (582kB)
+          Collecting wheel>=0.26; python_version >= "3" (from tensorboard==1.14.0->-r /tmp/app/requirements.txt (line 24))
+            Downloading https://files.pythonhosted.org/packages/8c/23/848298cccf8e40f5bbb59009b32848a4c38f4e7f3364297ab3c3e2e2cd14/wheel-0.34.2-py2.py3-none-any.whl
+          Installing collected packages: six, absl-py, astor, certifi, click, MarkupSafe, Jinja2, itsdangerous, Werkzeug, Flask, Flask-Cors, gast, google-pasta, grpcio, numpy, h5py, Keras-Preprocessing, Keras-Applications, PyYAML, scipy, Keras, setuptools, Markdown, Pillow, protobuf, wheel, tensorboard, termcolor, tensorflow-estimator, wrapt, tensorflow
+            Running setup.py install for absl-py: started
+              Running setup.py install for absl-py: finished with status 'done'
+            The script flask is installed in '/tmp/contents846970890/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The scripts f2py, f2py3 and f2py3.6 are installed in '/tmp/contents846970890/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            Running setup.py install for PyYAML: started
+              Running setup.py install for PyYAML: finished with status 'done'
+            The script markdown_py is installed in '/tmp/contents846970890/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The script wheel is installed in '/tmp/contents846970890/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The script tensorboard is installed in '/tmp/contents846970890/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            Running setup.py install for termcolor: started
+              Running setup.py install for termcolor: finished with status 'done'
+            Running setup.py install for wrapt: started
+              Running setup.py install for wrapt: finished with status 'done'
+            The scripts freeze_graph, saved_model_cli, tensorboard, tf_upgrade_v2, tflite_convert, toco and toco_from_protos are installed in '/tmp/contents846970890/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+          Successfully installed Flask-1.1.1 Flask-Cors-3.0.8 Jinja2-2.11.1 Keras-2.3.1 Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.2.1 MarkupSafe-1.1.1 Pillow-7.0.0 PyYAML-5.3.1 Werkzeug-1.0.0 absl-py-0.9.0 astor-0.8.1 certifi-2019.11.28 click-7.1.1 gast-0.3.3 google-pasta-0.2.0 grpcio-1.27.2 h5py-2.10.0 itsdangerous-1.1.0 numpy-1.18.2 protobuf-3.11.3 scipy-1.4.1 setuptools-46.1.3 six-1.14.0 tensorboard-1.14.0 tensorflow-1.14.0 tensorflow-estimator-1.14.0 termcolor-1.1.0 wheel-0.34.2 wrapt-1.12.1
+          You are using pip version 18.1, however version 20.0.2 is available.
+          You should consider upgrading via the 'pip install --upgrade pip' command.
+   Exit status 0
+   Uploading droplet, build artifacts cache...
+   Uploading droplet...
+   Uploading build artifacts cache...
+   Uploaded build artifacts cache (160.1M)
+   Uploaded droplet (256.7M)
+   Uploading complete
+   Cell 2f81fb0e-947c-48b8-a658-0bdba13945d2 stopping instance 3d7075b3-9c99-4f9b-8593-8457d5fec763
+   Cell 2f81fb0e-947c-48b8-a658-0bdba13945d2 destroying container for instance 3d7075b3-9c99-4f9b-8593-8457d5fec763
+   Cell 2f81fb0e-947c-48b8-a658-0bdba13945d2 successfully destroyed container for instance 3d7075b3-9c99-4f9b-8593-8457d5fec763
+
+Waiting for app to start...
+Start app timeout
+
+TIP: Application must be listening on the right port. Instead of hard coding the port, use the $PORT environment variable.
+
+Use 'cf logs catdogclassifier --recent' for more information
+FAILED
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>cf push
+Pushing from manifest to org My_First_CNN_Deployment_PCP / space development as patilgauravdharmraj@gmail.com...
+Using manifest file C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_\manifest.yml
+Getting app info...
+Updating app with these attributes...
+  name:                catdogclassifier
+  path:                C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_
+  command:             python clientApp.py   --master --processes 4 --threads 2
+  disk quota:          1.5G
+  health check type:   port
+  instances:           1
+  memory:              1.5G
+  stack:               cflinuxfs3
+  routes:
+    catdogclassifier-agile-roan-fs.cfapps.io
+
+Updating app catdogclassifier...
+Mapping routes...
+Comparing local files to remote cache...
+Packaging files to upload...
+Uploading files...
+ 50.94 KiB / 50.94 KiB [===================================================================================] 100.00% 1s
+
+Waiting for API to complete processing files...
+
+Stopping app...
+
+Staging app and tracing logs...
+   Downloaded app package (36.5M)
+   Downloaded build artifacts cache (160.1M)
+   ERROR: No buildpack groups passed detection.
+   ERROR: Please check that you are running against the correct path.
+   ERROR: failed to detect: no buildpacks participating
+   -----> Python Buildpack version 1.7.11
+   -----> Supplying Python
+   -----> Installing python 3.6.10
+          Copy [/tmp/buildpacks/a554f901a17cd0daf2a12e6ccfef600c/dependencies/0c19021d97cb1d7b05a10c3715e4867a/python-3.6.10-linux-x64-cflinuxfs3-3bb086eb.tgz]
+   -----> Installing pip-pop 0.1.4
+          Copy [/tmp/buildpacks/a554f901a17cd0daf2a12e6ccfef600c/dependencies/1cd0187e0e714e99bef932d4c22f6515/pip-pop-0.1.4-0a3b0f1b.tar.gz]
+   -----> Running Pip Install
+          Collecting absl-py==0.9.0 (from -r /tmp/app/requirements.txt (line 1))
+            Using cached https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz
+          Collecting astor==0.8.1 (from -r /tmp/app/requirements.txt (line 2))
+            Using cached https://files.pythonhosted.org/packages/c3/88/97eef84f48fa04fbd6750e62dcceafba6c63c81b7ac1420856c8dcc0a3f9/astor-0.8.1-py2.py3-none-any.whl
+          Collecting certifi==2019.11.28 (from -r /tmp/app/requirements.txt (line 3))
+            Using cached https://files.pythonhosted.org/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl
+          Collecting click==7.1.1 (from -r /tmp/app/requirements.txt (line 4))
+            Using cached https://files.pythonhosted.org/packages/dd/c0/4d8f43a9b16e289f36478422031b8a63b54b6ac3b1ba605d602f10dd54d6/click-7.1.1-py2.py3-none-any.whl
+          Collecting Flask==1.1.1 (from -r /tmp/app/requirements.txt (line 5))
+            Using cached https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl
+          Collecting Flask-Cors==3.0.8 (from -r /tmp/app/requirements.txt (line 6))
+            Using cached https://files.pythonhosted.org/packages/78/38/e68b11daa5d613e3a91e4bf3da76c94ac9ee0d9cd515af9c1ab80d36f709/Flask_Cors-3.0.8-py2.py3-none-any.whl
+          Collecting gast==0.3.3 (from -r /tmp/app/requirements.txt (line 7))
+            Using cached https://files.pythonhosted.org/packages/d6/84/759f5dd23fec8ba71952d97bcc7e2c9d7d63bdc582421f3cd4be845f0c98/gast-0.3.3-py2.py3-none-any.whl
+          Collecting google-pasta==0.2.0 (from -r /tmp/app/requirements.txt (line 8))
+            Using cached https://files.pythonhosted.org/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl
+          Collecting grpcio==1.27.2 (from -r /tmp/app/requirements.txt (line 9))
+            Using cached https://files.pythonhosted.org/packages/f1/97/bece4417f349f8f83252232ef66ea63eb47f8044ca61b51e2a478e2c7a94/grpcio-1.27.2-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting h5py==2.10.0 (from -r /tmp/app/requirements.txt (line 10))
+            Using cached https://files.pythonhosted.org/packages/60/06/cafdd44889200e5438b897388f3075b52a8ef01f28a17366d91de0fa2d05/h5py-2.10.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting itsdangerous==1.1.0 (from -r /tmp/app/requirements.txt (line 11))
+            Using cached https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+          Collecting Jinja2==2.11.1 (from -r /tmp/app/requirements.txt (line 12))
+            Using cached https://files.pythonhosted.org/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl
+          Collecting Keras==2.3.1 (from -r /tmp/app/requirements.txt (line 13))
+            Using cached https://files.pythonhosted.org/packages/ad/fd/6bfe87920d7f4fd475acd28500a42482b6b84479832bdc0fe9e589a60ceb/Keras-2.3.1-py2.py3-none-any.whl
+          Collecting Keras-Applications==1.0.8 (from -r /tmp/app/requirements.txt (line 14))
+            Using cached https://files.pythonhosted.org/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl
+          Collecting Keras-Preprocessing==1.1.0 (from -r /tmp/app/requirements.txt (line 15))
+            Using cached https://files.pythonhosted.org/packages/28/6a/8c1f62c37212d9fc441a7e26736df51ce6f0e38455816445471f10da4f0a/Keras_Preprocessing-1.1.0-py2.py3-none-any.whl
+          Collecting Markdown==3.2.1 (from -r /tmp/app/requirements.txt (line 16))
+            Using cached https://files.pythonhosted.org/packages/ab/c4/ba46d44855e6eb1770a12edace5a165a0c6de13349f592b9036257f3c3d3/Markdown-3.2.1-py2.py3-none-any.whl
+          Collecting MarkupSafe==1.1.1 (from -r /tmp/app/requirements.txt (line 17))
+            Using cached https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting numpy==1.18.2 (from -r /tmp/app/requirements.txt (line 18))
+            Using cached https://files.pythonhosted.org/packages/07/08/a549ba8b061005bb629b76adc000f3caaaf881028b963c2e18f811c6edc1/numpy-1.18.2-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting Pillow==7.0.0 (from -r /tmp/app/requirements.txt (line 19))
+            Using cached https://files.pythonhosted.org/packages/19/5e/23dcc0ce3cc2abe92efd3cd61d764bee6ccdf1b667a1fb566f45dc249953/Pillow-7.0.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting protobuf==3.11.3 (from -r /tmp/app/requirements.txt (line 20))
+            Using cached https://files.pythonhosted.org/packages/57/02/5432412c162989260fab61fa65e0a490c1872739eb91a659896e4d554b26/protobuf-3.11.3-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting PyYAML==5.3.1 (from -r /tmp/app/requirements.txt (line 21))
+            Using cached https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz
+          Collecting scipy==1.4.1 (from -r /tmp/app/requirements.txt (line 22))
+            Using cached https://files.pythonhosted.org/packages/dc/29/162476fd44203116e7980cfbd9352eef9db37c49445d1fec35509022f6aa/scipy-1.4.1-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting six==1.14.0 (from -r /tmp/app/requirements.txt (line 23))
+            Using cached https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+          Collecting tensorboard==1.14.0 (from -r /tmp/app/requirements.txt (line 24))
+            Using cached https://files.pythonhosted.org/packages/91/2d/2ed263449a078cd9c8a9ba50ebd50123adf1f8cfbea1492f9084169b89d9/tensorboard-1.14.0-py3-none-any.whl
+          Collecting tensorflow==1.14.0 (from -r /tmp/app/requirements.txt (line 25))
+            Using cached https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl
+          Collecting tensorflow-estimator==1.14.0 (from -r /tmp/app/requirements.txt (line 26))
+            Using cached https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-1.14.0-py2.py3-none-any.whl
+          Collecting termcolor==1.1.0 (from -r /tmp/app/requirements.txt (line 27))
+            Using cached https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz
+          Collecting Werkzeug==1.0.0 (from -r /tmp/app/requirements.txt (line 28))
+            Using cached https://files.pythonhosted.org/packages/ba/a5/d6f8a6e71f15364d35678a4ec8a0186f980b3bd2545f40ad51dd26a87fb1/Werkzeug-1.0.0-py2.py3-none-any.whl
+          Collecting wrapt==1.12.1 (from -r /tmp/app/requirements.txt (line 29))
+            Using cached https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz
+          Collecting setuptools>=36 (from Markdown==3.2.1->-r /tmp/app/requirements.txt (line 16))
+            Using cached https://files.pythonhosted.org/packages/a0/df/635cdb901ee4a8a42ec68e480c49f85f4c59e8816effbf57d9e6ee8b3588/setuptools-46.1.3-py3-none-any.whl
+          Collecting wheel>=0.26; python_version >= "3" (from tensorboard==1.14.0->-r /tmp/app/requirements.txt (line 24))
+            Using cached https://files.pythonhosted.org/packages/8c/23/848298cccf8e40f5bbb59009b32848a4c38f4e7f3364297ab3c3e2e2cd14/wheel-0.34.2-py2.py3-none-any.whl
+          Installing collected packages: six, absl-py, astor, certifi, click, Werkzeug, itsdangerous, MarkupSafe, Jinja2, Flask, Flask-Cors, gast, google-pasta, grpcio, numpy, h5py, PyYAML, Keras-Preprocessing, Keras-Applications, scipy, Keras, setuptools, Markdown, Pillow, protobuf, wheel, tensorboard, wrapt, termcolor, tensorflow-estimator, tensorflow
+            Running setup.py install for absl-py: started
+              Running setup.py install for absl-py: finished with status 'done'
+            The script flask is installed in '/tmp/contents010789892/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The scripts f2py, f2py3 and f2py3.6 are installed in '/tmp/contents010789892/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            Running setup.py install for PyYAML: started
+              Running setup.py install for PyYAML: finished with status 'done'
+            The script markdown_py is installed in '/tmp/contents010789892/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The script wheel is installed in '/tmp/contents010789892/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            The script tensorboard is installed in '/tmp/contents010789892/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+            Running setup.py install for wrapt: started
+              Running setup.py install for wrapt: finished with status 'done'
+            Running setup.py install for termcolor: started
+              Running setup.py install for termcolor: finished with status 'done'
+            The scripts freeze_graph, saved_model_cli, tensorboard, tf_upgrade_v2, tflite_convert, toco and toco_from_protos are installed in '/tmp/contents010789892/deps/0/python/bin' which is not on PATH.
+            Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+          Successfully installed Flask-1.1.1 Flask-Cors-3.0.8 Jinja2-2.11.1 Keras-2.3.1 Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.2.1 MarkupSafe-1.1.1 Pillow-7.0.0 PyYAML-5.3.1 Werkzeug-1.0.0 absl-py-0.9.0 astor-0.8.1 certifi-2019.11.28 click-7.1.1 gast-0.3.3 google-pasta-0.2.0 grpcio-1.27.2 h5py-2.10.0 itsdangerous-1.1.0 numpy-1.18.2 protobuf-3.11.3 scipy-1.4.1 setuptools-46.1.3 six-1.14.0 tensorboard-1.14.0 tensorflow-1.14.0 tensorflow-estimator-1.14.0 termcolor-1.1.0 wheel-0.34.2 wrapt-1.12.1
+          You are using pip version 18.1, however version 20.0.2 is available.
+          You should consider upgrading via the 'pip install --upgrade pip' command.
+   Exit status 0
+   Uploading droplet, build artifacts cache...
+   Uploading droplet...
+   Uploading build artifacts cache...
+   Uploaded build artifacts cache (160.1M)
+   Uploaded droplet (256.7M)
+   Uploading complete
+   Cell bb565af3-4e18-439d-b573-9585af02e86e stopping instance 77621816-b293-4859-bb00-0b224b732f70
+   Cell bb565af3-4e18-439d-b573-9585af02e86e destroying container for instance 77621816-b293-4859-bb00-0b224b732f70
+   Cell bb565af3-4e18-439d-b573-9585af02e86e successfully destroyed container for instance 77621816-b293-4859-bb00-0b224b732f70
+
+Waiting for app to start...
+Start unsuccessful
+
+TIP: use 'cf logs catdogclassifier --recent' for more information
+FAILED
+
+(Deployment_dogcat_new_) C:\Users\patil\Downloads\Deep Learning\CNN\Deployment_dogcat_new_>
+
